@@ -1,0 +1,14 @@
+<%= provide(:title, @user.name) %>
+<div class = "row">
+	<aside class = "span4">
+		<section>
+			<h1>
+				<%= @user.name %>
+				<%= @user.email %>
+				<%= @user.phone unless @user.phone.empty? %>
+				<%= @user.position %>
+			</h1>
+		</section>
+	</aside>
+</div>
+
