@@ -5,7 +5,7 @@
 			<h1>
 				<%= @user.name %>
 				<%= @user.email %>
-				<%= @user.phone unless @user.phone.empty? %>
+				<%= @user.phone unless @user.phone.nil? || @user.phone.empty? %>
 				<%= @user.position %>
 			</h1>
 		</section>
