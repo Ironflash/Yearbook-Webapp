@@ -1,9 +1,14 @@
 <footer class="footer">
-  <small>
-    <a href="http://www.tamu.edu">Texas A&#38M University</a>
-  </small>
   <nav>
-    <ul>
+  	<ul class="left">
+	    <li><a href="http://www.tamu.edu">Texas A&#38M University</a></li>
+	    <li><a href="http://studentlife.tamu.edu/studentmedia">Student Life<a/></li>
+	    <li><a href="http://www.thebatt.com/">The Battalion</a></li> 
+    </ul>
+  </nav>
+  <nav>
+    <ul class="right">
+      <li><%= link_to "Privacy Policy", privacy_path %></li>	
       <li><%= link_to "About",  about_path %></li>
       <li><%= link_to "Contact", contact_path %></li>
     </ul>

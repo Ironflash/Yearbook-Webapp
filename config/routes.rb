@@ -14,6 +14,28 @@ YearbookWebapp::Application.routes.draw do
 
   match '/contact', to:'static_pages#contact'
 
+  match '/history', to:'static_pages#history'
+
+  match '/ordering', to:'static_pages#ordering'
+
+  match '/portraits', to:'static_pages#portraits' 
+
+  match '/contracts', to:'static_pages#contracts'
+
+  match '/sections', to:'static_pages#sections'
+
+  match '/employment', to:'static_pages#employment'
+
+  match '/awards', to:'static_pages#awards'
+
+  match '/faqs', to:'static_pages#faqs'
+
+  match '/hall_of_fame', to:'static_pages#hall_of_fame'
+
+  match '/privacy', to:'static_pages#privacy'
+
+  match '/admin', to:'static_pages#admin'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

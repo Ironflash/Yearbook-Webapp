@@ -1,14 +1,8 @@
 <%= provide(:title, @user.name) %>
-<div class = "row">
-	<aside class = "span4">
-		<section>
-			<h1>
-				<%= @user.name %><br>
-				<%= @user.email %><br>
-				<%= @user.phone unless @user.phone.nil? || @user.phone.empty? %><br>
-				<%= @user.position %>
-			</h1>
-		</section>
-	</aside>
+<div class = "row-fluid">
+	<h1><%= @user.name %></h1>
+	<h1><%= @user.email %></h1>
+	<h1><%= @user.phone unless @user.phone.nil? || @user.phone.empty? %></h1>
+	<h1><%= @user.position %></h1>
 </div>
 
