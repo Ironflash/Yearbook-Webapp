@@ -23,6 +23,13 @@ class StoriesController < ApplicationController
   	@story = Story.find(params[:id])
   end
 
+  def edit
+  	@story = Story.find(params[:id])
+  end
+
   def destroy
+  	Story.find(params[:id]).destroy
+    flash[:success] = "Story deleted."
+    redirect_to stories_path
   end
 end

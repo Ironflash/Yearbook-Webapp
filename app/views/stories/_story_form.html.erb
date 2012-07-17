@@ -1,0 +1,25 @@
+
+<%= form_for(@story) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+  	<%= f.label :topic %>
+    <%= f.text_field :topic, placeholder: "New Story Topic" %>
+
+    <%= f.label :date %>
+    <%= f.text_field :date, class: "datepicker", value: "02/16/2012" %>
+
+    <%= f.label :time %>
+    <%= f.text_field :time, class: "timepicker" %>
+
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+
+  </div>
+  <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+<% end %>

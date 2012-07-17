@@ -3,4 +3,11 @@
   <span class="timestamp">
     Created <%= time_ago_in_words(story.created_at) %> ago.
   </span>
+  <% if current_user.admin? %>
+  | <%= link_to "edit", edit_story_path(story) %>
+  | <%= link_to "delete", story, method: :delete,
+                                  data: { confirm: "You sure?" }%>
+  <%end%>
+ 
+
 </li>
