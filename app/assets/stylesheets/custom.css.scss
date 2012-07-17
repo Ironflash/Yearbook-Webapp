@@ -88,7 +88,7 @@ p {
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: white;
+    color: $grayMediumLight;
     text-decoration: none;
   }
 }
@@ -158,6 +158,18 @@ aside {
   }
 }
 
+#sidebar {
+  li{
+    font-size: 1.6em;
+    text-align: left;
+    letter-spacing: -1px;
+    margin-bottom: 3px;
+    a{
+      color: $gray;
+    }
+  }
+}
+
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -199,7 +211,7 @@ input, textarea, select, .uneditable-input {
 /* bootstrap overrides */
 
 .navbar-inner {
-  background-color: #6C1420; /* background color will be black for all browsers */
+  background-color: #6C1420;
   background-image: none;
   background-image: none;
   background-image: none;

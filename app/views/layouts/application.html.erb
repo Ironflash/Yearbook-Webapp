@@ -13,8 +13,9 @@
 			<% flash.each do |key, value| %>
        			<div class="alert alert-<%= key %>"><%= value %></div>
       		<% end %>
-      		<div class ="row-fluid"
-      			<div class="span2">
+			<div class ="row-fluid" >
+      			
+      			<div class="span2" id="sidebar">
 	      			<!--sidebar content -->
 	      			<li><%= link_to "History", history_path %></li>
 	      			<li><%= link_to "About Us", about_path %></li>
@@ -25,13 +26,12 @@
 	      			<li><%= link_to "Employment", employment_path %></li>
 	      			<li><%= link_to "Awards", awards_path %></li>
 	      			<li><%= link_to "FAQs", faqs_path %></li>
-	      			
+
       			</div>
-      			<div class="span10 offset2">
+      			<div class="span10">
       				<!--body content -->
       				<%= yield %>
       			</div>
-      			
       		</div>
 			
 			<%= render 'layouts/footer' %>
