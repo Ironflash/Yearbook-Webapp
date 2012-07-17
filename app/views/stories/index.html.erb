@@ -1,0 +1,12 @@
+<% provide(:title, 'All Stories') %>
+<h1>All Stories</h1>
+
+<%= link_to"Suggest Story", suggest_story_path, class: "btn btn-primary" %>
+
+<%= will_paginate %>
+
+<ul class="stories">
+  <%= render @stories %>
+</ul>
+
+<%= will_paginate %>
