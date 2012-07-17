@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717053313) do
+ActiveRecord::Schema.define(:version => 20120717085350) do
 
   create_table "stories", :force => true do |t|
     t.string   "topic"
     t.integer  "user_id"
-    t.date     "date"
-    t.time     "time"
+    t.string   "date"
+    t.string   "time"
     t.string   "location"
     t.text     "description"
     t.text     "notes"

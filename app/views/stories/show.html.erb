@@ -1,0 +1,16 @@
+<% provide(:title, @story.topic) %>
+<div class="row-fluid">
+	<aside class="span4">
+		<section>
+			<h1><%= @story.topic %></h1>
+			<h1><%= @story.date unless @story.date.nil? %></h1>
+			<h1><%= @story.time unless @story.time.nil? %></h1>
+			<h1><%= @story.location unless @story.location.nil? || @story.location.empty?%></h1>
+		</section>
+	</aside>
+	<div class="span8">	
+		<p><%= @story.description unless @story.description.nil? || @story.description.empty?%></p>
+		<p><%= @story.notes unless @story.notes.nil? || @story.notes.empty?%></p>
+	</div>
+</div>
+

@@ -6,10 +6,10 @@ class StoriesController < ApplicationController
   end
 
   def create
-  	@story = Story.new(params[:story])
+  	@story = current_user.stories.build(params[:story])
   	if @story.save
   		flash[:success] = "Story created!"
-  		redirect_to @user
+  		redirect_to @story
   	else
   		render 'new'
   	end
@@ -17,6 +17,10 @@ class StoriesController < ApplicationController
 
   def index
     @stories = Story.paginate(page: params[:page])
+  end
+
+  def show
+  	@story = Story.find(params[:id])
   end
 
   def destroy
