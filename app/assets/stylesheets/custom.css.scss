@@ -228,12 +228,24 @@ input, textarea, select, .uneditable-input {
 .content {
   display: block;
 }
-.timestamp {
+.writer {
   color: $grayLight;
 }
 .gravatar {
   float: left;
   margin-right: 10px;
+}
+.approved {
+  color: #66FF33;
+  float: right;
+}
+.pending {
+  color: #CCCC00;
+  float: right;
+}
+.unapproved {
+  color: #FF0000;
+  float: right;
 }
 aside {
   textarea {

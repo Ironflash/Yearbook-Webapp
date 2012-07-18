@@ -1,13 +1,22 @@
 <li>
   <span class="topic"><%= story.topic %></span>
-  <span class="timestamp">
-    Created <%= time_ago_in_words(story.created_at) %> ago.
+  <span class="writer">
+    By: .
   </span>
+  | <%= link_to "view", story_path(story) %>
   <% if current_user.admin? %>
   | <%= link_to "edit", edit_story_path(story) %>
   | <%= link_to "delete", story, method: :delete,
                                   data: { confirm: "You sure?" }%>
   <%end%>
- 
+  <% if story.approved == 1 %>
+  	<span class="approved">Approved</span>
+  <%end%>
+  <%if story.approved == 2%>
+  	<span class="unapproved">Unapproved</span>
+  <%end %>
+  <%if story.approved == 0 %>
+    <span class="pending">Awaiting Approval</span>
+  <%end%>
 
 </li>

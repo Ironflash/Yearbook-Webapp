@@ -6,6 +6,18 @@
 			<h1><%= @story.date unless @story.date.nil? %></h1>
 			<h1><%= @story.time unless @story.time.nil? %></h1>
 			<h1><%= @story.location unless @story.location.nil? || @story.location.empty?%></h1>
+			<% if current_user.admin? %>
+				<%= link_to "Approve", 
+	          		story_path(@story, 
+		                    story: { approved: 1}),
+		          		method: :put,
+		          		class: "btn"%>
+		        <%= link_to "Unapprove", 
+	          		story_path(@story, 
+		                    story: { approved: 2}),
+		          		method: :put,
+		          		class: "btn"%>
+	        <%end%>
 		</section>
 	</aside>
 	<div class="span8">	

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717085350) do
+ActiveRecord::Schema.define(:version => 20120717095123) do
 
   create_table "stories", :force => true do |t|
     t.string   "topic"
@@ -21,8 +21,9 @@ ActiveRecord::Schema.define(:version => 20120717085350) do
     t.string   "location"
     t.text     "description"
     t.text     "notes"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.integer  "approved",    :default => 0
   end
 
   add_index "stories", ["user_id", "created_at", "date"], :name => "index_stories_on_user_id_and_created_at_and_date"

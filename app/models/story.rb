@@ -1,5 +1,5 @@
 class Story < ActiveRecord::Base
-  attr_accessible :date, :description, :location, :notes, :time, :topic, :user_id
+  attr_accessible :date, :description, :location, :notes, :time, :topic, :user_id, :approved
   belongs_to :user
 
   validates :user_id, presence: true

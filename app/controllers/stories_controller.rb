@@ -15,6 +15,16 @@ class StoriesController < ApplicationController
   	end
   end
 
+  def update
+  	@story = Story.find(params[:id])
+    if @story.update_attributes(params[:story])
+      flash[:success] = "Story status updated"
+      redirect_to @story
+    else
+      render 'edit'
+    end
+  end
+
   def index
     @stories = Story.paginate(page: params[:page])
   end
