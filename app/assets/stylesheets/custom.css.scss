@@ -253,6 +253,17 @@ aside {
     margin-bottom: 5px;
   }
 }
+.story {
+  h1,h2{
+    text-align: left;
+    a{
+      color: #333;
+    }
+    &.title{
+      font-size: 1.6em;
+    }
+  }
+}
 
 /* bootstrap overrides */
 

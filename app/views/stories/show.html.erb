@@ -1,11 +1,19 @@
 <% provide(:title, @story.topic) %>
-<div class="row-fluid">
-	<aside class="span4">
+<div class="row-fluid story">
+	<aside class="span4 ">
 		<section>
-			<h1><%= @story.topic %></h1>
-			<h1><%= @story.date unless @story.date.nil? %></h1>
-			<h1><%= @story.time unless @story.time.nil? %></h1>
-			<h1><%= @story.location unless @story.location.nil? || @story.location.empty?%></h1>
+			<h1>Topic:</h1>
+			<h2><%= @story.topic %></h2>
+			<h1>Date:</h1>
+			<h2><%= @story.date unless @story.date.nil? %></h1>
+			<h1>Time:</h1>
+			<h2><%= @story.time unless @story.time.nil? %></h1>
+			<h1>Location:</h1>
+			<h2><%= @story.location unless @story.location.nil? || @story.location.empty?%></h1>
+			<h1>Covered By:</h1>
+			<h2>
+				<%= link_to User.find(@story.user_id).name, user_path(User.find(@story.user_id)) %>
+			</h2>
 			<% if current_user.admin? %>
 				<%= link_to "Approve", 
 	          		story_path(@story, 
@@ -20,8 +28,10 @@
 	        <%end%>
 		</section>
 	</aside>
-	<div class="span8">	
+	<div class="span8">
+		<h1 class="title">Description:</h1>	
 		<p><%= @story.description unless @story.description.nil? || @story.description.empty?%></p>
+		<h1 class="title">Notes:</h1>
 		<p><%= @story.notes unless @story.notes.nil? || @story.notes.empty?%></p>
 	</div>
 </div>

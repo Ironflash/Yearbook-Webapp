@@ -6,7 +6,11 @@
     <%= f.text_field :topic, placeholder: "New Story Topic" %>
 
     <%= f.label :date %>
+    <%if @story.date.empty? %>
     <%= f.text_field :date, class: "datepicker", value: "02/16/2012" %>
+    <%else%>
+    <%= f.text_field :date, class: "datepicker" %>
+    <%end%>
 
     <%= f.label :time %>
     <%= f.text_field :time, class: "timepicker" %>
@@ -15,8 +19,8 @@
     <%= f.text_field :location %>
 
     <%if current_user.admin? %>
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+    <%= f.label :user_id, 'Staffer Covering' %>
+    <%= f.collection_select(:user_id, User.all, :id, :name) %>
     <%end%>
 
     <%= f.label :description %>
