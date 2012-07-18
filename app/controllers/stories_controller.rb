@@ -16,9 +16,9 @@ class StoriesController < ApplicationController
   end
 
   def update
-  	@story = Story.find(params[:id])
+    @story = Story.find(params[:id])
     if @story.update_attributes(params[:story])
-      flash[:success] = "Story status updated"
+      flash[:success] = "story status updated"
       redirect_to @story
     else
       render 'edit'

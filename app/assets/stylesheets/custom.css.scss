@@ -228,7 +228,7 @@ input, textarea, select, .uneditable-input {
 .content {
   display: block;
 }
-.writer {
+.timestamp {
   color: $grayLight;
 }
 .gravatar {
@@ -239,12 +239,12 @@ input, textarea, select, .uneditable-input {
   color: #66FF33;
   float: right;
 }
-.pending {
-  color: #CCCC00;
-  float: right;
-}
 .unapproved {
   color: #FF0000;
+  float: right;
+}
+.pending {
+  color: #CCCC00;
   float: right;
 }
 aside {
