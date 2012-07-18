@@ -6,7 +6,7 @@
     <%= f.text_field :topic, placeholder: "New Story Topic" %>
 
     <%= f.label :date %>
-    <%if @story.date.empty? %>
+    <%if @story.date.blank? %>
     <%= f.text_field :date, class: "datepicker", value: "02/16/2012" %>
     <%else%>
     <%= f.text_field :date, class: "datepicker" %>
