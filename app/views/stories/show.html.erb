@@ -4,15 +4,23 @@
 		<section>
 			<h1>Topic:</h1>
 			<h2><%= @story.topic %></h2>
+			<%if !@story.date.nil? %>
 			<h1>Date:</h1>
+			<%end%>
 			<h2><%= @story.date unless @story.date.nil? %></h1>
+			<%if !@story.time.nil? %>
 			<h1>Time:</h1>
+			<%end%>
 			<h2><%= @story.time unless @story.time.nil? %></h1>
+			<%if !@story.location.nil? && !@story.location.empty?%>
 			<h1>Location:</h1>
+			<%end%>
 			<h2><%= @story.location unless @story.location.nil? || @story.location.empty?%></h1>
+			<%if !@story.user_id.nil? %>
 			<h1>Covered By:</h1>
+			<%end%>
 			<h2>
-				<%= link_to User.find(@story.user_id).name, user_path(User.find(@story.user_id)) %>
+				<%= link_to User.find(@story.user_id).name, user_path(User.find(@story.user_id)) unless @story.user_id.nil?%>
 			</h2>
 			<% if current_user.admin? %>
 				<%= link_to "Approve", 
@@ -28,11 +36,20 @@
 	        <%end%>
 		</section>
 	</aside>
-	<div class="span8">
+	<div class="span7">
+		<%if !@story.description.nil? && !@story.description.empty?%>
 		<h1 class="title">Description:</h1>	
+		<%end%>
 		<p><%= @story.description unless @story.description.nil? || @story.description.empty?%></p>
+		<%if  !@story.notes.nil? && !@story.notes.empty?%>
 		<h1 class="title">Notes:</h1>
+		<%end%>
 		<p><%= @story.notes unless @story.notes.nil? || @story.notes.empty?%></p>
 	</div>
+	<%if current_user.admin? %>
+		<div class'"span1">
+			<%= link_to "Edit",edit_story_path(@story),class:"btn" %>
+		</div>
+	<%end%>
 </div>
 
