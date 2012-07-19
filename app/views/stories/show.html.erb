@@ -45,6 +45,16 @@
 		<h1 class="title">Notes:</h1>
 		<%end%>
 		<p><%= @story.notes unless @story.notes.nil? || @story.notes.empty?%></p>
+		<div class="comments">
+			<h3>Comments (<%= @story.comments.count %>)</h3>
+			<%= render 'shared/comment_form', story: @story.id %>
+		    <% if @story.comments.any? %>
+		      <ul>
+		        <%= render @comments %>
+		      </ul>
+		      <%= will_paginate @comments %>
+		    <% end %>
+		</div>
 	</div>
 	<%if current_user.admin? %>
 		<div class'"span1">

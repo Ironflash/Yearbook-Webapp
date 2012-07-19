@@ -15,7 +15,7 @@
 	<div class="span8">
     <% if @user.stories.any? %>
       <h3>Stories covering and covered (<%= @user.stories.count %>)</h3>
-      <ol class="microposts">
+      <ol class="stories">
         <%= render @stories %>
       </ol>
       <%= will_paginate @stories %>

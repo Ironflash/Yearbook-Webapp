@@ -1,0 +1,12 @@
+<li class="comment">
+	<section>
+	 	<h2>
+			<%= gravatar_for User.find(@comment.user_id) %>
+			<%= link_to User.find(@comment.user_id).name,user_path(User.find(@comment.user_id)) %>
+		</h2>
+	</section>
+    <span class="content"><%= comment.content %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(comment.created_at) %> ago.
+    </span>
+</li>

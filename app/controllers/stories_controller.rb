@@ -31,6 +31,8 @@ class StoriesController < ApplicationController
 
   def show
   	@story = Story.find(params[:id])
+    @comments = @story.comments.paginate(page: params[:page])
+    @comment = current_user.comments.build if signed_in?
   end
 
   def edit
