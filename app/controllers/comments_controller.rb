@@ -4,22 +4,16 @@ class CommentsController < ApplicationController
 
   def create
   	@comment = current_user.comments.build(params[:comment])
-    if @comment.save
- 		#if successful
- 		# render 'update' 
- 		render story_path(Story.find(@comment.story_id))
+    if @comment.save 
+ 		   redirect_to story_path(Story.find(@comment.story_id))
     else
-      	#if unsuccessful
-      	render story_path(Story.find(@comment.story_id))
+       redirect_to story_path(Story.find(@comment.story_id))
     end
-  end
-
-  def update
   end
 
   def destroy
   	@comment.destroy
-    redirect_to root_path
+    redirect_to story_path(Story.find(@comment.story_id))
   end
 
   private
