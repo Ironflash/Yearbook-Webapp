@@ -50,7 +50,7 @@
 			<%= render 'shared/comment_form', story: @story.id %>
 		    <% if @story.comments.any? %>
 		      <ul>
-		        <%= render @comments %>
+		        <%= render @comments, story: @story.id %>
 		      </ul>
 		      <%= will_paginate @comments %>
 		    <% end %>

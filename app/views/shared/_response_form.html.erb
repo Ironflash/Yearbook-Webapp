@@ -1,0 +1,12 @@
+<p>response</p>
+<div class="response">
+    <%= form_for(@response) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+	    <div class="field">
+	    	<%= f.text_field :content, placeholder: "Compose response..." %>
+	    </div>
+	    	<%= f.hidden_field :story_id, value: story %>
+	    	<%= f.hidden_field :comment_id, value: comment %>
+	    	<%= f.submit "Post", class: "btn" %>
+	<%end%>
+</div>

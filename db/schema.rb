@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120719002540) do
+ActiveRecord::Schema.define(:version => 20120719054526) do
 
   create_table "comments", :force => true do |t|
     t.string   "content"
     t.integer  "user_id"
     t.integer  "parent_comment_id"
-    t.integer  "child_comment_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.integer  "story_id"
+    t.integer  "comment_id"
   end
 
   add_index "comments", ["user_id", "created_at"], :name => "index_comments_on_user_id_and_created_at"

@@ -280,8 +280,8 @@ aside {
     border-top: 1px solid #e8e8e8;
   }
 }
-.comment{
-  &.content {
+// li.comment{
+  .content {
     display: block;
     font-size:  1em; 
   }
@@ -298,7 +298,11 @@ aside {
       margin-bottom: 5px;
     }
   }
-}
+  a.delete{
+    float: right;
+    color: $grayLight;
+  }
+// }
 
 /* bootstrap overrides */
 

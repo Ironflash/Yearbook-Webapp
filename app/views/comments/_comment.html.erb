@@ -8,5 +8,21 @@
     <span class="content"><%= comment.content %></span>
     <span class="timestamp">
       Posted <%= time_ago_in_words(comment.created_at) %> ago.
+      <% if current_user.admin? || current_user.id == @comment.user_id %>
+			<%= link_to "delete", comment, method: :delete, data: { confirm: "You sure?",class: "delete"}, title: comment.content%>
+	  <%end%>
     </span>
+    <ul>
+    	<div class="response">
+		    <%= form_for(@response) do |f| %>
+				<%= render 'shared/error_messages', object: f.object %>
+			    <div class="field">
+			    	<%= f.text_field :content, placeholder: "Compose response..." %>
+			    </div>
+			    	<%= f.hidden_field :story_id, value: story %>
+			    	<%= f.hidden_field :comment_id, value: @comment.id %>
+			    	<%= f.submit "Post", class: "btn" %>
+			<%end%>
+		</div>
+    </ul>
 </li>
