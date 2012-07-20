@@ -15,19 +15,20 @@
       <h1 class="position"><%= @user.position %></h1>
     <%end%>
     <%if current_user.admin? && !current_user?(@user) && !@user.admin? || current_user.position=="Editor and Chief" %> 
-      <%= link_to "Give Admin", toggle_admin_user_path(@user),class: "btn" %>
-      <%= link_to "Remove Admin", toggle_admin_user_path(@user),class: "btn" %>
+      <%if user.admin? %>
+        <%= link_to "Remove Admin Privileges", toggle_admin_user_path(@user),class: "btn" %>
+      <%else%>
+        <%= link_to "Give Admin Privileges", toggle_admin_user_path(@user),class: "btn" %>
+      <%end%>
     <%end%>
     </section>
   	</aside>
-	<div class="span8">
-    <% if @user.stories.any? %>
-      <h3>Stories covering and covered (<%= @user.stories.count %>)</h3>
-      <ol class="stories">
-        <%= render @stories %>
-      </ol>
-      <%= will_paginate @stories %>
-    <% end %>
+	<div class="span8"> 
+    <h3>Stories covering and covered (<%= @user.stories.count %>)</h3>
+    <ol class="stories">
+      <%= render @stories %>
+    </ol>
+    <%= will_paginate @stories %>
   </div>
 </div>
 

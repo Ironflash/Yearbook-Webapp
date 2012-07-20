@@ -23,16 +23,20 @@
 				<%= link_to User.find(@story.user_id).name, user_path(User.find(@story.user_id)) unless @story.user_id.nil?%>
 			</h2>
 			<% if current_user.admin? %>
-				<%= link_to "Approve", 
-	          		story_path(@story, 
-		                    story: { approved: 1}),
-		          		method: :put,
-		          		class: "btn"%>
-		        <%= link_to "Unapprove", 
-	          		story_path(@story, 
-		                    story: { approved: 2}),
-		          		method: :put,
-		          		class: "btn"%>
+				<% if @story.approved == 2 || @story.approved == 0 %>
+					<%= link_to "Approve", 
+		          		story_path(@story, 
+			                    story: { approved: 1}),
+			          		method: :put,
+			          		class: "btn"%>
+			    <%end%>
+		        <%if @story.approved == 1 || @story.approved == 0%>
+			        <%= link_to "Unapprove", 
+		          		story_path(@story, 
+			                    story: { approved: 2}),
+			          		method: :put,
+			          		class: "btn"%>
+			    <%end%>
 	        <%end%>
 		</section>
 	</aside>

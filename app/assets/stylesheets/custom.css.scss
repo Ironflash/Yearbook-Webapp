@@ -243,6 +243,13 @@ input, textarea, select, .uneditable-input {
 .content {
   display: block;
 }
+.covered_by {
+
+}
+.topic {
+  color: $grayDark;
+  font-size: 1.5em;
+}
 .timestamp {
   color: $grayLight;
 }
@@ -277,9 +284,6 @@ aside {
 .story {
   h1,h2{
     text-align: left;
-    a{
-      color: #333;
-    }
     &.title{
       font-size: 1.6em;
     }

@@ -5,6 +5,7 @@ class Story < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :topic, presence: true, length: { maximum: 100 }
+  validates :description, presence: true
 
   default_scope order: 'stories.created_at DESC'
 end
