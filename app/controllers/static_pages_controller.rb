@@ -44,6 +44,7 @@ class StaticPagesController < ApplicationController
   end
 
   def admin
+    @update = HomepageUpdate.new
   end
 
   private 

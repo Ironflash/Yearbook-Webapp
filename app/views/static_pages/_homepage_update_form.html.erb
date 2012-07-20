@@ -1,0 +1,7 @@
+<%= form_for(@update) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "New Homepage Text...",size: "30x10" %>
+  </div>
+  <%= f.submit "Submit", class: "btn" %>
+<%end%>

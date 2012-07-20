@@ -1,3 +1,9 @@
 <% provide(:title,'Admin') %>
 <h1>Admin Settings</h1>
-<%= link_to "Create Member", signup_path, class: "btn btn-large btn-primary" %>
+<h2>Staff management</h2>
+<%= link_to "Create Staffer", signup_path, class: "btn btn-large btn-primary" %>
+<div class="homepage_management">
+	<h2>Homepage management</h2>
+	<h3>Update homepage</h3>
+	<%= render 'homepage_update_form' %>
+</div>
