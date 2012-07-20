@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:index, :edit, :update, :show]
   # before_filter :correct_user,   only: [:edit, :update]
-  before_filter :admin_user,     only: [:destroy, :edit, :update, :create, :new]
+  before_filter :admin_user,     only: [:destroy, :edit, :update, :create, :new, :toggle_admin]
 
   def new
   	@user = User.new
@@ -16,8 +16,11 @@ class UsersController < ApplicationController
   	@user = User.new(params[:user])
   	if @user.save
       sign_in @user
+      if @user.position == "Editor and Chief"
+        @user.toggle!(:admin) 
+      end
   		flash[:success] = "Member has been created!"
-  		redirect_to @user
+  		redirect_to admin_path
   	else
   		render 'new'
   	end
@@ -45,6 +48,12 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy
     flash[:success] = "User destroyed."
     redirect_to users_path
+  end
+
+  def toggle_admin
+    @user = User.find(params[:id])
+    @user.toggle!(:admin)
+    redirect_to user_path(@user)
   end
 
   private

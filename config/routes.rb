@@ -11,6 +11,12 @@ YearbookWebapp::Application.routes.draw do
   match '/signin', to:'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
+  resources :users do
+      member do
+          get :toggle_admin
+      end
+  end
+
   match '/suggest_story', to: 'stories#new'
 
   match '/help', to:'static_pages#help'
