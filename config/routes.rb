@@ -45,6 +45,8 @@ YearbookWebapp::Application.routes.draw do
 
   match '/privacy', to:'static_pages#privacy'
 
+  match '/ladder', to:'static_pages#ladder'
+
   match '/admin', to:'static_pages#admin'
 
   # The priority is based upon order of creation:

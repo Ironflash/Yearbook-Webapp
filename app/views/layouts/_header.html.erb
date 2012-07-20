@@ -7,7 +7,7 @@
           <li><%= link_to "Home", root_path %></li>
           
           <% if signed_in? %>
-
+            <li><%= link_to "Ladder", ladder_path %></li>
             <li><%= link_to "Stories", stories_path %></li>
             <li><%= link_to "Staff", users_path %></li>
             <li id="fat-menu" class="dropdown">
