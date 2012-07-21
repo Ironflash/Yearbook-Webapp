@@ -7,8 +7,10 @@
   | <%= link_to "view", story_path(story) %>
   <% if current_user.admin? %>
   | <%= link_to "edit", edit_story_path(story) %>
-  | <%= link_to "delete", story, method: :delete,
-                                  data: { confirm: "You sure?" }%>
+  <%end%>
+  <% if current_user.admin? || current_user(User.find(story.user_id)) %>
+    | <%= link_to "delete", story, method: :delete,
+                                    data: { confirm: "You sure?" }%>
   <%end%>
   <% if story.approved == 1 %>
     <span class="approved" >Approved</span>

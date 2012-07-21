@@ -239,48 +239,51 @@ input, textarea, select, .uneditable-input {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
-}
-.content {
-  display: block;
-}
-.covered_by {
 
-}
-.topic {
-  color: $grayDark;
-  font-size: 1.5em;
-}
-.timestamp {
-  color: $grayLight;
-}
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-.approved {
-  color: #66FF33;
-  float: right;
-}
-.unapproved {
-  color: #FF0000;
-  float: right;
-}
-.pending {
-  color: #CCCC00;
-  float: right;
-}
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
+  .content {
+    display: block;
   }
-}
-.story-desc-notes{
-  h1{
-    margin-bottom: 10px;
-    letter-spacing: -1px;
+  .covered_by {
+
   }
+  .topic {
+    color: $grayDark;
+    font-size: 1.5em;
+  }
+  .timestamp {
+    color: $grayLight;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+  }
+  .approved {
+    color: #66FF33;
+    float: right;
+  }
+  .unapproved {
+    color: #FF0000;
+    float: right;
+  }
+  .pending {
+    color: #CCCC00;
+    float: right;
+  }
+  aside {
+    textarea {
+      height: 100px;
+      margin-bottom: 5px;
+    }
+  }
+  .story-desc-notes{
+    h1{
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
 }
+}
+
+
 .story {
   h1,h2{
     text-align: left;
@@ -324,6 +327,30 @@ li.comment{
   }
   a.delete{
     float: right;
+    color: $grayLight;
+  }
+}
+
+/* meetings */
+.meetings {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .date {
+    color: $grayDark;
+    font-size: 1.5em;
+  }
+  .time {
+
+  }
+  .location {
+
+  }
+  .timestamp {
     color: $grayLight;
   }
 }

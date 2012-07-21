@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120719233854) do
+ActiveRecord::Schema.define(:version => 20120720192137) do
 
   create_table "comments", :force => true do |t|
     t.string   "content"
@@ -32,6 +32,19 @@ ActiveRecord::Schema.define(:version => 20120719233854) do
   end
 
   add_index "homepage_updates", ["created_at"], :name => "index_homepage_updates_on_created_at"
+
+  create_table "meetings", :force => true do |t|
+    t.string   "time"
+    t.string   "date"
+    t.string   "location"
+    t.text     "note"
+    t.string   "duration"
+    t.string   "attendees"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "meetings", ["created_at"], :name => "index_meetings_on_created_at"
 
   create_table "stories", :force => true do |t|
     t.string   "topic"

@@ -1,0 +1,40 @@
+<% provide(:title, 'Meeting') %>
+<div class="row-fluid story">
+  <div class="span4 ">
+    <section>
+      <p>
+        <b>Time:</b>
+        <%= @meeting.time %>
+      </p>
+
+      <p>
+        <b>Date:</b>
+        <%= @meeting.date %>
+      </p>
+
+      <p>
+        <b>Location:</b>
+        <%= @meeting.location %>
+      </p>
+
+      <p>
+        <b>Note:</b>
+        <%= @meeting.note %>
+      </p>
+
+      <p>
+        <b>Duration:</b>
+        <%= @meeting.duration %>
+      </p>
+
+      <p>
+        <b>Attendees:</b>
+        <%= @meeting.attendees %>
+      </p>
+
+      <% if current_user.admin? %>
+        <%= link_to 'Edit', edit_meeting_path(@meeting), class: "btn"%> 
+      <%end%>
+    </section>
+  </div>
+</div>

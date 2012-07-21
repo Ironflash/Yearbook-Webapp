@@ -1,5 +1,6 @@
 class StoriesController < ApplicationController
   before_filter :signed_in_user
+  before_filter :admin_user,     only: [:edit, :update, :toggle_admin]
 
   def new
   	@story = Story.new
@@ -44,4 +45,9 @@ class StoriesController < ApplicationController
     flash[:success] = "Story deleted."
     redirect_to stories_path
   end
+
+  private 
+    def admin_user
+      redirect_to(root_path) unless !current_user.nil? && current_user.admin?
+    end
 end

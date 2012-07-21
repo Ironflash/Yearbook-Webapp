@@ -1,0 +1,15 @@
+<li>
+  <span class="date"><%= meeting.date %></span><br>
+  <span class="time"><%= meeting.time %></span><br>
+  <span class="location"><%= meeting.location %></span><br>
+  <span class="timestamp">
+    Created <%= time_ago_in_words(meeting.created_at) %> ago.
+  </span>
+  | <%= link_to "view", meeting_path(meeting) %>
+  <% if current_user.admin? %>
+  | <%= link_to "edit", edit_meeting_path(meeting) %>
+  | <%= link_to "delete", meeting, method: :delete,
+                                  data: { confirm: "You sure?" }%>
+  <%end%>
+
+</li>

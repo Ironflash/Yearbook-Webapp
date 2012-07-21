@@ -1,4 +1,6 @@
 YearbookWebapp::Application.routes.draw do
+  
+  resources :meetings 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :stories
