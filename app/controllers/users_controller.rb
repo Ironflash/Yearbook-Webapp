@@ -15,7 +15,6 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(params[:user])
   	if @user.save
-      sign_in @user
       if @user.position == "Editor and Chief"
         @user.toggle!(:admin) 
       end
