@@ -1,7 +1,7 @@
 <%= form_for(@meeting) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-
+    <%= f.label :date %>
     <%if @meeting.date.blank? %>
       <%= f.text_field :date, class: "datepicker", value: DateTime.now.strftime('%m/%d/%Y') %>
     <%else%>

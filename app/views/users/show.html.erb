@@ -14,7 +14,7 @@
     <%else%>
       <h1 class="position"><%= @user.position %></h1>
     <%end%>
-    <%if current_user.admin? && !current_user?(@user) && !@user.admin? || current_user.position=="Editor and Chief" %> 
+    <%if current_user.admin? && !current_user?(@user) && !@user.admin? || (current_user.position=="Editor and Chief" && @user.position != "Editor and Chief") %> 
       <%if @user.admin? %>
         <%= link_to "Remove Admin Privileges", toggle_admin_user_path(@user),class: "btn" %>
       <%else%>
